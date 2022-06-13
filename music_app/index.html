@@ -1,0 +1,239 @@
+<html>
+ <head>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+   <link href="favicon.ico">
+   <style>
+       /* =========
+ basic reset 
+========== */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*=============================
+  default grid set up -> mobile first
+===============================*/
+body {
+      display: grid;
+      min-height: 100vh;
+      min-width: 100%;
+      grid-template-rows: 1fr 90px;
+      grid-template-columns: 1fr;
+			grid-template-areas: "content"
+                           "footer";
+		}
+
+.main {
+  background-color: #2c3e50;
+  grid-area: content;
+}
+
+.footer {
+  background-color: #c0392b;
+  grid-area: footer;
+}
+
+.aside {
+  color: rgba(255,255,255,0.8);
+  background-color: #7f8c8d;
+  grid-area: sidebar;
+}
+
+/* hide the icons */
+.aside i {
+  display: none;
+}
+
+/*
+  main
+*/
+
+ img {
+  max-width: 100%;
+}
+
+.main__header {
+  display: grid;
+  color: rgba(255,255,255,0.9);
+  grid-template-areas: "img"
+                       "dtls"; 
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.main__header > .img {
+  grid-area: img;
+}
+.main__header > .details {
+  grid-area: dtls;
+} 
+
+.main__body > div {
+  padding: 8px;
+  display:flex;
+}
+
+.main__body > div p{
+  flex: 0 0 25%;
+}
+
+/*===============
+  clean ups.
+===============*/
+
+.details {
+	display: flex;
+	flex-direction: column;
+	font-weight: 300;
+	color: #fff;
+	padding-left: 50px;  
+}
+
+.details div:nth-child(1){
+	margin-bottom: auto;
+}
+
+.details div:nth-child(2){
+	margin-top: 0;
+}
+
+.details div:nth-child(2) i.fa{
+	font-size: 0.9em;
+	padding: 0 0.7em;
+	font-weight: 300;
+}
+
+.details div:nth-child(1) p:first-child{
+	font-size: 1.8em;
+	margin: 0 0 10px;
+}
+
+.details div:nth-child(1) p:not(:first-child){
+	font-size: 0.9em;
+	margin: 2px 0;
+}
+
+/*=============================
+  larger screens
+===============================*/
+
+@media only screen and (min-width:600px) {
+  body {
+    grid-template-columns: 40px 1fr;    
+		grid-template-areas: "sidebar  content"
+			                     "footer  footer";
+  }
+  
+  .aside {
+     display: grid;
+     justify-items: center;
+     align-items: center;
+  }
+  
+  /* show the icons */
+  .aside i {
+    display: block;
+  }
+  
+   .main__header {
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: "img dtls"
+  } 
+}
+
+/* ===============
+Mobile: Phones
+==================*/
+@media screen and (max-width: 600px) {
+  .sm--hide {
+    display: none;
+  } 
+
+	.sm-text-right {
+		text-align: right;
+	}
+  .main__header {
+    justify-items: center;
+  }
+  .main__header > .details {
+    text-align: center;
+  }  
+  .img > img {
+    width: 150px
+  }
+  .main__body > div p{
+    flex: 0 0 50%;
+  }
+}
+
+
+
+
+   </style>
+ </head>
+ <body>
+    <div class="aside">
+      <i class="fa fa-bars"></i>
+      <i class="fa fa-home"></i>
+      <i class="fa fa-search"></i>
+      <i class="fa fa-volume-up"></i>
+      <i class="fa fa-user"></i>
+      <i class="fa fa-spotify"></i>
+      <i class="fa fa-cog"></i>
+      <i class="fa fa-soundcloud"></i>
+  </div>
+
+  <div class="main">
+    <div class="main__header">
+      <div class="img">
+      <img src="http://bit.ly/2sc2NJd"/> <!--Album art-->
+      </div> 
+        <section class="details"> <!--other details of the album-->
+              <div>
+                <p>CattyBoard Top 100 Single Charts (11.06.36)</p>
+                <p class="sm--hide">Unknown Artist</p>
+                <p class="sm--hide">2016 . Charts . 100 songs</p>
+              </div>
+             <div> <!--Music controls-->
+                <i class="fa fa-play"> &nbsp;Play all</i>
+                <i class="fa fa-plus"> &nbsp;Add to</i>
+                <i class="fa fa-ellipsis-h">&nbsp;&nbsp;More</i>
+              </div>
+        </section>
+    </div>
+    <div class="main__body">
+        <div>
+              <p>1. One Dance</p>
+              <p class="sm--hide">Crake feat CatKid &amp; Cyla</p>
+              <p class="sm-text-right">2:54</p>
+              <p class="sm--hide"><span>CATTY CLOUD SYNC</span></p>
+        </div>
+        <div>
+              <p>2. Panda</p>
+              <p class="sm--hide">Cattee</p>
+              <p class="sm-text-right">4:06</p>
+              <p class="sm--hide"><span>CATTY CLOUD SYNC</span></p>
+        </div>
+        <div>
+              <p>3. Can't Stop the Feeling!</p>
+              <p class="sm--hide">Catin Cimberlake</p>
+              <p class="sm-text-right">3:56</p>
+              <p class="sm--hide"><span>CATTY CLOUD SYNC</span></p>
+         </div>
+         <div>
+              <p>4. Work From Home</p>
+              <p class="sm--hide">Cat Harmony feat Colla</p>
+              <p class="sm-text-right">3:34</p>
+              <p class="sm--hide"><span>CATTY CLOUD SYNC</span></p>
+         </div>
+    </div>
+  </div>
+
+
+
+  <div class="footer"></div>
+
+
+ </body>
+</html>
